@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class About extends Component {
+class Contact extends Component {
   render() {
     return (
       <div>
-        Đây là trang giới thiệu
+        Đây là trang lien he
      </div>
     );
   }
 }
 
-export default About;
+export default Contact;
