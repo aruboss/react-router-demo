@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
@@ -14,13 +14,13 @@ class App extends Component {
           <nav className="navbar navbar-inverse">
             <ul className="nav navbar-nav">
               <li>
-                <Link to="/">Trang chủ</Link>
+                <NavLink to="/" activeClassName="selected">Trang chủ</NavLink>
               </li>
               <li>
-                <Link to="/about">Giới thiệu</Link>
+                <NavLink to="/about" activeClassName="selected" >Giới thiệu</NavLink>
               </li>
               <li>
-                <Link to="/contact">Liên hệ</Link>
+                <NavLink to="/contact" activeClassName="selected">Liên hệ</NavLink>
               </li>
             </ul>
           </nav>
