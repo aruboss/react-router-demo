@@ -1,9 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
+
+const MenuLink = ({ label, to, activeOnlyWhenExact }) => {
+  return (
+    <Route path={to} exact={activeOnlyWhenExact} children={({ match }) => {
+      var active = match ? 'active abc' : '';
+      return (
+        <li className={active}>
+          <Link to={to} activeClassName="selected">
+            {label}
+          </Link>
+        </li>
+      )
+    }}
+
+    />
+  )
+}
 
 class App extends Component {
   render() {
@@ -11,17 +28,11 @@ class App extends Component {
       <Router>
         <div className="App">
           {/* Menu */}
-          <nav className="navbar navbar-inverse">
+          <nav className="navbar navbar-default">
             <ul className="nav navbar-nav">
-              <li>
-                <NavLink to="/" activeClassName="selected">Trang chủ</NavLink>
-              </li>
-              <li>
-                <NavLink to="/about" activeClassName="selected" >Giới thiệu</NavLink>
-              </li>
-              <li>
-                <NavLink to="/contact" activeClassName="selected">Liên hệ</NavLink>
-              </li>
+              <MenuLink label="Trang chủ" to="/" activeOnlyWhenExact={true}></MenuLink>
+              <MenuLink label="Giới thiệu" to="/about" activeOnlyWhenExact={false}></MenuLink>
+              <MenuLink label="Liên hệ" to="/contact" activeOnlyWhenExact={false}></MenuLink>
             </ul>
           </nav>
           {/* Nội dung */}
