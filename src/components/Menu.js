@@ -8,13 +8,18 @@ const menu = [
     exact: true
   },
   {
-    name: 'Giới thiệu',
+    name: 'Giới Thiệu',
     to: '/about',
     exact: false
   },
   {
-    name: 'Liên hệ',
+    name: 'Liên Hệ',
     to: '/contact',
+    exact: false
+  },
+  {
+    name: 'Sản Phẩm',
+    to: '/products',
     exact: false
   }
 ]
