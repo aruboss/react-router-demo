@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink, Route } from 'react-router-dom';
-import Product  from './Product';
+import Product from './Product';
 
 class Products extends Component {
   render() {
@@ -36,6 +36,8 @@ class Products extends Component {
         </NavLink>
       );
     });
+    var { location } = this.props;
+    console.log(location);
     return (
       <div className="container">
         <h1>Doanh sách sản phẩm</h1>
@@ -46,11 +48,11 @@ class Products extends Component {
           </ul>
         </div>
 
-      
-      <div className="row">
-        <Route path="/products/:name" component={Product}/>
-      </div>
-      
+
+        <div className="row">
+          <Route path="/products/:name" component={Product} />
+        </div>
+
       </div>
     );
   }
